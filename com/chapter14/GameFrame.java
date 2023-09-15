@@ -1,5 +1,4 @@
 package com.chapter14;
-import java.awt.FlowLayot;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,7 +6,6 @@ import java.util.Random;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JText.Field;
 import javax.swing.JTextField;
 
 class GameFrame extends JFrame implements ActionListener {
@@ -36,9 +34,9 @@ class GameFrame extends JFrame implements ActionListener {
 		String textFieldText = textField.getText();
 		
 		if (Integer.parseInt(textFieldText)==randomNumber) {
-			button.setEnable(false);
+			button.setEnabled(false);
 			textField.setText(textField.getText() + "Молодец! Угадал!");
-			textField.setEnable(false);
+			textField.setEnabled(false);
 		} else {
 			textField.setText("");
 			textField.requestFocus();
