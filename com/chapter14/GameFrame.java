@@ -17,6 +17,7 @@ class GameFrame extends JFrame implements ActionListener {
 	JTextField textField = new JTextField(15);
 	JButton button = new JButton("Сделать попытку");
 	JLabel label = new JLabel(numGuesses + " попыток");
+	String guessWord;
 	
 	public GameFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -43,7 +44,12 @@ class GameFrame extends JFrame implements ActionListener {
 		}
 		
 		numGuesses++;
-		String guessWord = (numGuesses == 1) ? " попытка" : " попыток";
+		if (numGuesses == 1) {
+			guessWord = "попытка";
+		} else  {
+			guessWord = (numGuesses <= 4) ? " попытки" : " попыток";
+		}
+		
 		label.setText(numGuesses + guessWord);
 	}
 
