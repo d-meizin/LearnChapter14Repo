@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import static java.lang.System.out;
 
 class GameFrame extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
@@ -34,9 +35,15 @@ class GameFrame extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		String textFieldText = textField.getText();
 		
-		if (Integer.parseInt(textFieldText)==randomNumber) {
+		if (e.getSource() == button) {
+			out.println("Да, это действительно кнопка");
+		}
+		
+		out.println("Объект вызвавший событие это: " + button);
+		
+		if (Integer.parseInt(textFieldText) == randomNumber) {
 			button.setEnabled(false);
-			textField.setText(textField.getText() + "Молодец! Угадал!");
+			textField.setText(textField.getText() + " Молодец! Угадал!");
 			textField.setEnabled(false);
 		} else {
 			textField.setText("");
