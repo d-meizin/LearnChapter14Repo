@@ -39,7 +39,8 @@ class GameFrame extends JFrame implements ActionListener {
 			out.println("Да, это действительно кнопка");
 		}
 		
-		out.println("Объект вызвавший событие это: " + button);
+		out.println("Вывод переменной \"button\"   : " + button);
+		out.println("Объект вызвавший событие это: " + e.getSource());
 		
 		if (Integer.parseInt(textFieldText) == randomNumber) {
 			button.setEnabled(false);
