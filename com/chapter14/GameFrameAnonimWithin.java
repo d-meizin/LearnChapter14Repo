@@ -47,10 +47,12 @@ class GameFrameAnonimWithin extends JFrame {
 				
 				numGuesses++;
 				out.println(numGuesses);
-				if (numGuesses == 1) {
-					guessWord = "попытка";
+				if (numGuesses == 1 || numGuesses == 21) {
+					guessWord = " попытка";
 				} else  {
-					guessWord = (numGuesses <= 4) ? " попытки" : " попыток";
+					guessWord = (numGuesses <= 4 || 
+				numGuesses == 22 || numGuesses == 23 || numGuesses == 24) ? 
+						                           " попытки" : " попыток";
 				}
 				
 				label.setText(numGuesses + guessWord);
